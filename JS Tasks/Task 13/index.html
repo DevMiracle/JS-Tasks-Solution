@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 13</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task 13</h1>
+      <ul class="pagination">
+        <li><a href="../Task 1/index.html">1</a></li>
+        <li> <a href="../Task 2/index.html">2</a></li>
+        <li> <a href="../Task 3/index.html">3</a></li>
+        <li> <a href="../Task 4/index.html">4</a></li>
+        <li> <a href="../Task 5/index.html">5</a></li>
+        <li> <a href="../Task 6/index.html">6</a></li>
+        <li> <a href="../Task 7/index.html">7</a></li>
+        <li> <a href="../Task 8/index.html">8</a></li>
+        <li> <a href="../Task 9/index.html">9</a></li>
+        <li> <a href="../Task 10/index.html">10</a></li>
+        <li> <a href="../Task 11/index.html">11</a></li>
+        <li> <a href="../Task 12/index.html">12</a></li>
+        <li> <a href="../Task 13/index.html" class="active">13</a></li>
+      </ul>
+      <p>
+        The ATM contains banknotes in denominations of 100, 50, 20, 10, 5 and 1 AZN. <br>
+        Write a function that receives the amount requested from the ATM and returns the optimal <br>
+        banknotes for the user's request. The option with the smallest number of banknotes is <br>
+        optimal. For example, when requesting 73 AZN, it would be optimal to give one 50₼, one <br>
+        20₼ and three 1₼ banknotes.
+      </p>
+      <div class="code-window">
+        <pre>
+          <code class="language-javascript">
+      function withdraw(amount) {
+        const denominations = [100, 50, 20, 10, 5, 1];
+        let remainingAmount = amount;
+        const result = {};
+      
+        denominations.forEach(denomination => {
+          const notes = Math.floor(remainingAmount / denomination);         
+          if (notes > 0) {
+            result[denomination] = notes;
+            remainingAmount -= notes * denomination;
+          }
+        });
+      
+        return result;
+      }            
+          </code>
+        </pre>
+      </div>
+      <button class="clickHere">
+        Click Here!
+      </button>
+  </body>
+  <script src="task13.js"></script>
+  <script src="prism.js"></script>
+</html>

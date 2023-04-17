@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 12</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task 12</h1>
+      <ul class="pagination">
+        <li><a href="../Task 1/index.html">1</a></li>
+        <li> <a href="../Task 2/index.html">2</a></li>
+        <li> <a href="../Task 3/index.html">3</a></li>
+        <li> <a href="../Task 4/index.html">4</a></li>
+        <li> <a href="../Task 5/index.html">5</a></li>
+        <li> <a href="../Task 6/index.html">6</a></li>
+        <li> <a href="../Task 7/index.html">7</a></li>
+        <li> <a href="../Task 8/index.html">8</a></li>
+        <li> <a href="../Task 9/index.html">9</a></li>
+        <li> <a href="../Task 10/index.html">10</a></li>
+        <li> <a href="../Task 11/index.html">11</a></li>
+        <li> <a href="../Task 12/index.html" class="active">12</a></li>
+        <li> <a href="../Task 13/index.html">13</a></li>
+      </ul>
+      <p>
+        The food delivery company assigns an individual code (an integer number) to the <br>
+        each registered customer. Once a month, a promotion is held, as a result some users <br>
+        receive a discount. To become a winner, the sum of the digits of user’s individual code <br>
+        must be equal to a pre-selected number. <br>
+        Write a function that will receive an individual code from the user and will return the sum of <br>
+        the digits of this code.             
+      </p>
+      <div class="code-window">
+        <pre>
+          <code class="language-javascript">
+      function sumOfDigits(code) {
+        let sum = 0;
+        while (code) {
+          sum += code % 10;
+          code = Math.floor(code / 10);           
+        }
+        return sum;
+      }
+          </code>
+        </pre>
+      </div>
+      <button class="clickHere">
+        Click Here!
+      </button>
+  </body>
+  <script src="task12.js"></script>
+  <script src="prism.js"></script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task 8</h1>
+      <ul class="pagination">
+        <li><a href="../Task 1/index.html">1</a></li>
+        <li> <a href="../Task 2/index.html">2</a></li>
+        <li> <a href="../Task 3/index.html">3</a></li>
+        <li> <a href="../Task 4/index.html">4</a></li>
+        <li> <a href="../Task 5/index.html">5</a></li>
+        <li> <a href="../Task 6/index.html">6</a></li>
+        <li> <a href="../Task 7/index.html">7</a></li>
+        <li> <a href="../Task 8/index.html" class="active">8</a></li>
+        <li> <a href="../Task 9/index.html">9</a></li>
+        <li> <a href="../Task 10/index.html">10</a></li>
+        <li> <a href="../Task 11/index.html">11</a></li>
+        <li> <a href="../Task 12/index.html">12</a></li>
+        <li> <a href="../Task 13/index.html">13</a></li>
+      </ul>
+      <p>
+        Write a function (that might be a part of a chatbot program) that converts the <br>
+        numeric representation of a two-digits number to text. For example, typing "25" will return <br>
+        "twenty five" as the result.  <br>
+        *Please note: if you are going to write a switch for 90 options, this is far from the most <br>
+        optimal way. Consider separating tens and ones.        
+      </p>
+      <div class="code-window">
+        <pre>
+          <code class="language-javascript">
+    function convertNumberToText(num) {
+      const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+      const tens = ['', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+      const special = ['', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+      
+      let text = '';
+      
+      if (num < 10) {
+        text += ones[num];
+      } else if (num >= 10 && num < 20) {
+        text += special[num - 10];
+      } else if (num >= 20 && num < 100) {
+        const tenIndex = Math.floor(num / 10);
+        const oneIndex = num % 10;
+        
+        text += tens[tenIndex];
+        
+        if (oneIndex > 0) {
+          text += ' ' + ones[oneIndex];
+        }
+      }
+      
+      return text;
+    }             
+          </code>
+        </pre>
+      </div>
+      <button class="clickHere">
+        Click Here!
+      </button>
+  </body>
+  <script src="task8.js"></script>
+  <script src="prism.js"></script>
+</html>

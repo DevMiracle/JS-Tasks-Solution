@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 9</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task 9</h1>
+      <ul class="pagination">
+        <li><a href="../Task 1/index.html">1</a></li>
+        <li> <a href="../Task 2/index.html">2</a></li>
+        <li> <a href="../Task 3/index.html">3</a></li>
+        <li> <a href="../Task 4/index.html">4</a></li>
+        <li> <a href="../Task 5/index.html">5</a></li>
+        <li> <a href="../Task 6/index.html">6</a></li>
+        <li> <a href="../Task 7/index.html">7</a></li>
+        <li> <a href="../Task 8/index.html">8</a></li>
+        <li> <a href="../Task 9/index.html" class="active">9</a></li>
+        <li> <a href="../Task 10/index.html">10</a></li>
+        <li> <a href="../Task 11/index.html">11</a></li>
+        <li> <a href="../Task 12/index.html">12</a></li>
+        <li> <a href="../Task 13/index.html">13</a></li>
+      </ul>
+      <p>
+        Write a function that receives a number from the user and prints to the console all <br>
+        numbers between 1 and 1000 that are divisible by the user's number without remainder.
+      </p>
+      <div class="code-window">
+        <pre>
+          <code class="language-javascript">
+    function printDivisibleNumbers(num) {         
+      for (let i = 1; i <= 1000; i++) {       
+        if (i % num === 0) {        
+          console.log(i);     
+        }
+      }
+    }                      
+          </code>
+        </pre>
+      </div>
+  </body>
+  <script src="task9.js"></script>
+  <script src="prism.js"></script>
+</html>

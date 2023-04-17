@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 6</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task 6</h1>
+      <ul class="pagination">
+        <li><a href="../Task 1/index.html">1</a></li>
+        <li> <a href="../Task 2/index.html">2</a></li>
+        <li> <a href="../Task 3/index.html">3</a></li>
+        <li> <a href="../Task 4/index.html">4</a></li>
+        <li> <a href="../Task 5/index.html">5</a></li>
+        <li> <a href="../Task 6/index.html" class="active">6</a></li>
+        <li> <a href="../Task 7/index.html">7</a></li>
+        <li> <a href="../Task 8/index.html">8</a></li>
+        <li> <a href="../Task 9/index.html">9</a></li>
+        <li> <a href="../Task 10/index.html">10</a></li>
+        <li> <a href="../Task 11/index.html">11</a></li>
+        <li> <a href="../Task 12/index.html">12</a></li>
+        <li> <a href="../Task 13/index.html">13</a></li>
+      </ul>
+      <p>
+        The shop stores the following information about customers: <br>
+        - Name; <br>
+        - Age; <br>
+        - The number of orders; <br>
+        - Amounts of orders. <br>
+        The store offers a discount to regular customers and customers over 60 years of age. A <br>
+        customer is considered a regular if he or she made 4 or more orders with a total amount of <br>
+        100 AZN or more. Write a function that will receive customer’s data as input and return <br>
+        information whether the customer receives a discount or not.
+      </p>
+      <div class="code-window">
+        <pre>
+          <code class="language-javascript">
+      function checkDiscountEligibility(name, age, numOrders, orderAmounts) {
+        let totalAmount = orderAmounts.reduce((a, b) => a + b, 0); // Calculate total amount of orders
+        let isRegular = numOrders >= 4 && totalAmount >= 100; 
+        let isSenior = age >= 60; 
+        if (isRegular || isSenior) {
+          return `${name} is eligible for a discount.`;
+        } else {
+          return `${name} is not eligible for a discount.`;
+        }
+      }
+      //For example
+      let name = "Elon Musk";
+      let age = 51;
+      let numOrders = 6;
+      let orderAmounts = [20, 30, 40, 50, 60, 70];
+      
+      console.log(checkDiscountEligibility(name, age, numOrders, orderAmounts)); 
+      //Output is Elon Musk is eligible for a discount.           
+          </code>
+        </pre>
+      </div>
+      <button class="clickHere">
+        Click Here!
+      </button>
+  </body>
+  <script src="task6.js"></script>
+  <script src="prism.js"></script>
+</html>

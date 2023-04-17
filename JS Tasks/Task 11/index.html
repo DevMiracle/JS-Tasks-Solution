@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 11</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task 11</h1>
+      <ul class="pagination">
+        <li><a href="../Task 1/index.html">1</a></li>
+        <li> <a href="../Task 2/index.html">2</a></li>
+        <li> <a href="../Task 3/index.html">3</a></li>
+        <li> <a href="../Task 4/index.html">4</a></li>
+        <li> <a href="../Task 5/index.html">5</a></li>
+        <li> <a href="../Task 6/index.html">6</a></li>
+        <li> <a href="../Task 7/index.html">7</a></li>
+        <li> <a href="../Task 8/index.html">8</a></li>
+        <li> <a href="../Task 9/index.html">9</a></li>
+        <li> <a href="../Task 10/index.html">10</a></li>
+        <li> <a href="../Task 11/index.html" class="active">11</a></li>
+        <li> <a href="../Task 12/index.html">12</a></li>
+        <li> <a href="../Task 13/index.html">13</a></li>
+      </ul>
+      <p>
+        The coffee house has a complex system for giving loyalty points to regular <br>
+        customers: For the first two orders, 1 point is awarded. For the next - the sum of the two <br>
+        previous ones. <br>
+        For example, here are the points that will be given for the first 8 orders: 1, 1, 2, 3, 5, 8, 13, <br>
+        21. Write a function that will receive a number from the user (the order number) and will <br>
+        return the number of loyalty points to be given.        
+      </p>
+      <div class="code-window">
+        <pre>
+          <code class="language-javascript">
+    function calculateLoyaltyPoints(orderNumber) {
+      if (orderNumber <= 0) {
+        return 0; // Can't have negative or zero order numbers          
+      } else if (orderNumber === 1 || orderNumber === 2) {
+        return 1; // First two orders always get 1 point
+      } else {
+        let previous1 = 1;
+        let previous2 = 1;
+        let current = 0;
+        for (let i = 3; i <= orderNumber; i++) {
+          current = previous1 + previous2;
+          previous2 = previous1;
+          previous1 = current;
+        }
+        return current;
+      }
+    }
+          </code>
+        </pre>
+      </div>
+      <button class="clickHere" onclick="displayLoyaltyPoints()">
+        Click Here!
+      </button>
+  </body>
+  <script src="task11.js"></script>
+  <script src="prism.js"></script>
+</html>
